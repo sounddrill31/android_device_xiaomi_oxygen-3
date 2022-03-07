@@ -153,3 +153,4 @@ zygote.critical_window.minute=10
 
 # Tweaks
 ro.hwui.render_ahead=20
+ro.vendor.perf.scroll_opt=true
