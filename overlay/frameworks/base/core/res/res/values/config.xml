@@ -467,5 +467,8 @@
 
     <!-- Whether to clip notification contents with a rounded rectangle. Might be expensive on
          certain GPU's and thus can be turned off with only minimal visual impact. -->
+         
     <bool name="config_notifications_round_rect_clipping">false</bool>
+    <!-- The max scale for the wallpaper when it's zoomed in -->
+    <item name="config_wallpaperMaxScale" format="float" type="dimen">1.10</item>
 </resources>
