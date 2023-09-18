@@ -22,7 +22,7 @@ import android.content.SharedPreferences;
 import android.content.DialogInterface;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
+
 
 public class DiracActivity extends CollapsingToolbarBaseActivity {
     private boolean isOn;
@@ -63,7 +63,7 @@ public class DiracActivity extends CollapsingToolbarBaseActivity {
     public void openFM() {
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.content_frame, new DiracSettingsFragment(), TAG_DIRAC)
+                    .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, new DiracSettingsFragment(), TAG_DIRAC)
                     .commit();
     }
 }
