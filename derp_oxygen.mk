@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from oxygen device.
 $(call inherit-product, device/xiaomi/oxygen/device.mk)
 
-# Inherit some common LineageOS stuff.
+# Inherit some common DerpFest stuff.
 $(call inherit-product, vendor/derp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
