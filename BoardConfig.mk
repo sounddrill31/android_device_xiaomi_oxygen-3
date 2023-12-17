@@ -162,3 +162,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 include vendor/xiaomi/oxygen/BoardConfigVendor.mk
+
+# NopeNopeGuy's Fix, to be used with https://github.com/NopeNopeGuy/android_vendor_lineage
+OVERRIDE_QCOM_HARDWARE_VARIANT:= oxygen
