@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_oxygen.mk
+    $(LOCAL_DIR)/arrow_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_oxygen-user \
-    lineage_oxygen-userdebug \
-    lineage_oxygen-eng
+    arrow_oxygen-user \
+    arrow_oxygen-userdebug \
+    arrow_oxygen-eng
