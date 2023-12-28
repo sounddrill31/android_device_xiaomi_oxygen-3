@@ -150,3 +150,6 @@ persist.sys.wfd.virtual=0
 
 # Zygote
 zygote.critical_window.minute=10
+
+# hwui properties
+debug.hwui.renderer=vulkan
