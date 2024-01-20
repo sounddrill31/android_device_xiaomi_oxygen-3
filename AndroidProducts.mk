@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_oxygen.mk
+    $(LOCAL_DIR)/arrow_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_oxygen-user \
-    derp_oxygen-userdebug \
-    derp_oxygen-eng
+    arrow_oxygen-user \
+    arrow_oxygen-userdebug \
+    arrow_oxygen-eng
