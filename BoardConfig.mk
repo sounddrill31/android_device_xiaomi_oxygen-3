@@ -182,6 +182,8 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# Set QCOM HARDWARE VARIANT
+QCOM_HARDWARE_VARIANT:= msm8953
 # Inherit from the proprietary version
 include vendor/xiaomi/oxygen/BoardConfigVendor.mk
 
