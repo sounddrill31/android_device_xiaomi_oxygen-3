@@ -186,3 +186,6 @@ include vendor/xiaomi/oxygen/BoardConfigVendor.mk
 
 # NopeNopeGuy's Fix, to be used with https://github.com/NopeNopeGuy/android_vendor_lineage
 OVERRIDE_QCOM_HARDWARE_VARIANT:= oxygen
+
+# GrapheneOS Apps
+$(call inherit-product-if-exists, external/Apps/Android.mk)
