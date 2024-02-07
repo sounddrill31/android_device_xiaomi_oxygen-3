@@ -107,7 +107,7 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/device_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/lmodroid/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
@@ -136,12 +136,10 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_ODM := odm
-ifneq ($(LINEAGE_BUILD),)
 BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := -1
 BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 1195376640
 BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
 BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 104857600
-endif
 
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
@@ -185,4 +183,4 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 include vendor/xiaomi/oxygen/BoardConfigVendor.mk
 
 # NopeNopeGuy's Fix, to be used with https://github.com/NopeNopeGuy/android_vendor_lineage
-OVERRIDE_QCOM_HARDWARE_VARIANT:= oxygen
+# OVERRIDE_QCOM_HARDWARE_VARIANT:= oxygen
