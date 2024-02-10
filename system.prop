@@ -135,3 +135,6 @@ ro.hw_timeout_multiplier=3
 # WFD
 persist.hwc.enable_vds=1
 persist.debug.wfd.enable=1
+
+# OTA
+lmodroid.updater.uri=https://raw.githubusercontent.com/sounddrill31/Releases/main/lmodroid-oxygen.json
