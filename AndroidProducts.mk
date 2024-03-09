@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lmodroid_oxygen.mk
+    $(LOCAL_DIR)/lineage_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
-    lmodroid_oxygen-user \
-    lmodroid_oxygen-userdebug \
-    lmodroid_oxygen-eng
+    lineage_oxygen-user \
+    lineage_oxygen-userdebug \
+    lineage_oxygen-eng

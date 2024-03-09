@@ -107,7 +107,7 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/device_compatibility_matrix.xml \
-    vendor/lmodroid/config/device_framework_matrix.xml
+    vendor/lineage/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
@@ -182,5 +182,5 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # Inherit from the proprietary version
 include vendor/xiaomi/oxygen/BoardConfigVendor.mk
 
-# LMODROID Flags
+# lineage Flags
 TARGET_NOT_USES_BLUR=true
