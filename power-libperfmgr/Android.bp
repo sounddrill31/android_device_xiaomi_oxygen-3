@@ -24,7 +24,7 @@ cc_binary {
     vintf_fragments: ["aidl/android.hardware.power-service.xiaomi-msm8953.xml"],
     vendor: true,
     shared_libs: [
-        "android.hardware.power-V3-ndk",
+        "android.hardware.power-ndk_platform",
         "libbase",
         "libcutils",
         "liblog",
@@ -33,7 +33,6 @@ cc_binary {
 	"libdisppower-pixel",
         "libperfmgr",
         "libprocessgroup",
-        "pixel-power-ext-V1-ndk",
     ],
     srcs: [
         "aidl/service.cpp",
