@@ -51,7 +51,7 @@
 #define CEILING4(X)  (((X) + 0x0003) & 0xFFFC)
 #define CEILING2(X)  (((X) + 0x0001) & 0xFFFE)
 
-#define MAX_ZOOMS_CNT 91
+#define MAX_ZOOMS_CNT 101
 #define MAX_SIZES_CNT 40
 #define MAX_EXP_BRACKETING_LENGTH 32
 #define MAX_ROI 10
@@ -107,14 +107,14 @@
 #define EXIF_IMAGE_DESCRIPTION_SIZE 100
 
 #define MAX_INFLIGHT_REQUESTS  6
-#define MAX_INFLIGHT_BLOB      3
+#define MAX_INFLIGHT_BLOB      6
 #define MIN_INFLIGHT_REQUESTS  3
 #define MIN_INFLIGHT_60FPS_REQUESTS (6)
 #define MAX_INFLIGHT_REPROCESS_REQUESTS 1
 #define MAX_INFLIGHT_HFR_REQUESTS (48)
 #define MIN_INFLIGHT_HFR_REQUESTS (40)
 
-#define QCAMERA_DUMP_FRM_LOCATION "/data/vendor/qcam/"
+#define QCAMERA_DUMP_FRM_LOCATION "/data/misc/camera/"
 #define QCAMERA_MAX_FILEPATH_LENGTH 64
 
 #define LIKELY(x)       __builtin_expect((x), true)
@@ -144,6 +144,9 @@
 
 /* Defines the number of columns in the color correction matrix (CCM) */
 #define AWB_NUM_CCM_COLS (3)
+
+/* Index to switch H/W to consume to free-run Q*/
+#define CAM_FREERUN_IDX 0xFFFFFFFF
 
 typedef uint64_t cam_feature_mask_t;
 
@@ -412,6 +415,7 @@ typedef enum {
     CAM_MAPPING_BUF_TYPE_CAPABILITY,  /* mapping camera capability buffer */
     CAM_MAPPING_BUF_TYPE_PARM_BUF,    /* mapping parameters buffer */
     /* this buffer is needed for the payload to be sent with bundling related cameras cmd */
+    XIAOMI,
     CAM_MAPPING_BUF_TYPE_SYNC_RELATED_SENSORS_BUF, /* mapping sync buffer.*/
 
     /* followings are per stream */
@@ -1046,6 +1050,7 @@ typedef struct {
         cam_coordinate_type_t coordinate[MAX_ROI];
         uint32_t aec_roi_idx[MAX_ROI];
     } cam_aec_roi_position;
+    uint16_t xiaomi_reserved;
 } cam_set_aec_roi_t;
 
 typedef struct {
@@ -1698,8 +1703,13 @@ typedef struct {
 } cam_hw_data_overwrite_t;
 
 typedef struct {
+    uint32_t streamID;
+    uint32_t buf_index;
+} cam_stream_request_t;
+
+typedef struct {
     uint32_t num_streams;
-    uint32_t streamID[MAX_NUM_STREAMS];
+    cam_stream_request_t stream_request[MAX_NUM_STREAMS];
 } cam_stream_ID_t;
 
 /*CAC Message posted during pipeline*/
@@ -2144,6 +2154,7 @@ typedef enum {
     /* parameters added for related cameras */
     /* fetch calibration info for related cam subsystem */
     CAM_INTF_PARM_RELATED_SENSORS_CALIBRATION,
+    XIAOMI_01,
     /* focal length ratio info */
     CAM_INTF_META_AF_FOCAL_LENGTH_RATIO,
     /* crop for binning & FOV adjust */
@@ -2162,6 +2173,7 @@ typedef enum {
     CAM_INTF_PARM_FLIP,
     /*Frame divert info from ISP*/
     CAM_INTF_BUF_DIVERT_INFO,
+    XIAOMI_02,
     /* Use AV timer */
     CAM_INTF_META_USE_AV_TIMER,
     CAM_INTF_META_EFFECTIVE_EXPOSURE_FACTOR,
@@ -2224,6 +2236,10 @@ typedef enum {
     CAM_INTF_META_FOCUS_VALUE,
     /*Spot light detection result output from af core*/
     CAM_INTF_META_SPOT_LIGHT_DETECT,
+    /* HAL based HDR*/
+    CAM_INTF_PARM_HAL_BRACKETING_HDR,
+    XIAOMI_03,
+    XIAOMI_04,
     CAM_INTF_PARM_MAX
 } cam_intf_parm_type_t;
 
@@ -2448,6 +2464,7 @@ typedef struct {
 #define CAM_QCOM_FEATURE_QUADRA_CFA     (((cam_feature_mask_t)1UL)<<33)
 #define CAM_QTI_FEATURE_PPEISCORE       (((cam_feature_mask_t)1UL)<<34)
 #define CAM_QCOM_FEATURE_METADATA_BYPASS (((cam_feature_mask_t)1UL)<<35)
+#define CAM_QTI_FEATURE_RTB              (((cam_feature_mask_t)1UL)<<36)
 #define CAM_QCOM_FEATURE_PP_SUPERSET    (CAM_QCOM_FEATURE_DENOISE2D|CAM_QCOM_FEATURE_CROP|\
                                          CAM_QCOM_FEATURE_ROTATION|CAM_QCOM_FEATURE_SHARPNESS|\
                                          CAM_QCOM_FEATURE_SCALE|CAM_QCOM_FEATURE_CAC|\
@@ -2807,6 +2824,7 @@ typedef struct {
     cam_area_t               af_roi;        /* AF roi info */
     /* Information for CPP reprocess */
     cam_dyn_img_data_t       dyn_mask;      /* Post processing dynamic feature mask */
+    int32_t                  frame_number;  /* Backend frame number*/
 } cam_reprocess_info_t;
 
 /***********************************
