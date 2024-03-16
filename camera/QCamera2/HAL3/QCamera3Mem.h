@@ -51,15 +51,31 @@ class QCamera3Memory {
 public:
     int cleanCache(uint32_t index)
     {
+#ifndef TARGET_ION_ABI_VERSION
         return cacheOps(index, ION_IOC_CLEAN_CACHES);
+#else //TARGET_ION_ABI_VERSION
+        (void)index;
+        return NO_ERROR;
+#endif //TARGET_ION_ABI_VERSION
+
     }
     int invalidateCache(uint32_t index)
     {
+#ifndef TARGET_ION_ABI_VERSION
         return cacheOps(index, ION_IOC_INV_CACHES);
+#else //TARGET_ION_ABI_VERSION
+        (void)index;
+        return NO_ERROR;
+#endif //TARGET_ION_ABI_VERSION
     }
     int cleanInvalidateCache(uint32_t index)
     {
+#ifndef TARGET_ION_ABI_VERSION
         return cacheOps(index, ION_IOC_CLEAN_INV_CACHES);
+#else //TARGET_ION_ABI_VERSION
+        (void)index;
+        return NO_ERROR;
+#endif //TARGET_ION_ABI_VERSION
     }
     int getFd(uint32_t index);
     ssize_t getSize(uint32_t index);
@@ -72,7 +88,6 @@ public:
     virtual int32_t markFrameNumber(uint32_t index, uint32_t frameNumber) = 0;
     virtual int32_t getFrameNumber(uint32_t index) = 0;
     virtual int32_t getBufferIndex(uint32_t frameNumber) = 0;
-    virtual int32_t getOldestFrameNumber(uint32_t &index) = 0;
 
     QCamera3Memory();
     virtual ~QCamera3Memory();
@@ -117,7 +132,6 @@ public:
     virtual int32_t markFrameNumber(uint32_t index, uint32_t frameNumber);
     virtual int32_t getFrameNumber(uint32_t index);
     virtual int32_t getBufferIndex(uint32_t frameNumber);
-    virtual int32_t getOldestFrameNumber(uint32_t &index);
 
 protected:
     virtual void *getPtrLocked(uint32_t index);
@@ -144,7 +158,6 @@ public:
     virtual int32_t markFrameNumber(uint32_t index, uint32_t frameNumber);
     virtual int32_t getFrameNumber(uint32_t index);
     virtual int32_t getBufferIndex(uint32_t frameNumber);
-    virtual int32_t getOldestFrameNumber(uint32_t &index);
 
     void *getBufferHandle(uint32_t index);
 protected:
