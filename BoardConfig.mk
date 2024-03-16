@@ -5,6 +5,7 @@
 #
 
 DEVICE_PATH := device/xiaomi/oxygen
+USES_DEVICE_XIAOMI_OXYGEN := true
 
 # Architecture
 TARGET_ARCH := arm64
