@@ -39,7 +39,6 @@ cc_binary {
         "aidl/service.cpp",
         "aidl/Power.cpp",
         "aidl/PowerExt.cpp",
-        "aidl/PowerHintSession.cpp",
-        "aidl/PowerSessionManager.cpp",
+        "aidl/InteractionHandler.cpp",
     ],
 }
