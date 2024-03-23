@@ -32,11 +32,10 @@
         android:minSdkVersion="30"
         android:targetSdkVersion="30"/>
 
-    <application
+    <application>
         android:icon="@mipmap/ic_launcher"
         android:label="@string/device_settings_app_name"
         android:persistent="true"
-
         <receiver android:name=".BootCompletedReceiver">
             <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -44,7 +43,7 @@
             </intent-filter>
         </receiver>
 
-        <activity
+        <activity>
             android:name=".dirac.DiracActivity"
 	    android:label="@string/dirac_title"
 	    android:exported="true"
@@ -58,7 +57,7 @@
                        android:resource="@string/dirac_summary" />
         </activity>
  
-        <activity
+        <activity>
             android:name=".soundcontrol.SoundControlSettingsActivity"
             android:exported="true"
             android:label="@string/audio_title"
@@ -71,7 +70,7 @@
                        android:resource="@string/audio_summary" />
         </activity>
 
-        <activity
+        <activity>
             android:name=".torch.TorchSettingsActivity"
             android:exported="true"
             android:label="@string/torch_title"
@@ -88,7 +87,7 @@
                  android:permission="XiaomiDozeService">
         </service>
 
-        <activity
+        <activity>
             android:name=".doze.DozeSettingsActivity"
 	    android:label="@string/ambient_display_title"
 	    android:exported="true"
