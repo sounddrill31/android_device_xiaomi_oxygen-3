@@ -27,13 +27,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.parts.rc",
-    src: "init.parts.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.target.rc",
     src: "init.target.rc",
     sub_dir: "init/hw",

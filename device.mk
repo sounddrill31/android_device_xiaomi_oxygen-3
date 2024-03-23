@@ -159,10 +159,6 @@ PRODUCT_PACKAGES += \
     libvulkan \
     vendor.display.config@1.0.vendor
 
-# Device-specific settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Device Properties
 TARGET_PRODUCT_PROP := $(LOCAL_PATH)/product.prop
 
@@ -343,7 +339,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
     init.recovery.qcom.rc \
-    init.parts.rc \
     init.target.rc \
     ueventd.qcom.rc
 
