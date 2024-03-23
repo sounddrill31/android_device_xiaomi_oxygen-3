@@ -29,14 +29,13 @@
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
     <uses-sdk
-        android:minSdkVersion="33"
-        android:targetSdkVersion="33"/>
+        android:minSdkVersion="30"
+        android:targetSdkVersion="30"/>
 
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/device_settings_app_name"
         android:persistent="true"
-        android:theme="@style/Theme.SubSettingsBase">
 
 	<receiver 
 	    android:name=".BootCompletedReceiver"
@@ -51,7 +50,6 @@
             android:name=".dirac.DiracActivity"
 	    android:label="@string/dirac_title"
 	    android:exported="true"
-            android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
@@ -66,7 +64,6 @@
             android:name=".soundcontrol.SoundControlSettingsActivity"
             android:exported="true"
             android:label="@string/audio_title"
-            android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -80,7 +77,6 @@
             android:name=".torch.TorchSettingsActivity"
             android:exported="true"
             android:label="@string/torch_title"
-            android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -98,7 +94,6 @@
             android:name=".doze.DozeSettingsActivity"
 	    android:label="@string/ambient_display_title"
 	    android:exported="true"
-	    android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="org.lineageos.settings.device.DOZE_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
