@@ -222,8 +222,7 @@ PRODUCT_PACKAGES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    ims_ext_common.xml \
-    libims-shim
+    ims_ext_common.xml
 
 # Input configuration
 ifneq ($(HIDE_HWKEY),true)
