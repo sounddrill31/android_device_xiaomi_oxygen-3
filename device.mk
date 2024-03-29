@@ -254,7 +254,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.xiaomi
+    android.hardware.light@2.0-service.xiaomi_oxygen
 
 # Lineage Health
 PRODUCT_PACKAGES += \
