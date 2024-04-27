@@ -36,7 +36,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    vendor/qcom/opensource/usb/etc
+    vendor/qcom/opensource/usb/etc \ 
+    hardware/lineage/interfaces/power-libperfmgr
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -300,6 +301,10 @@ PRODUCT_PACKAGES += \
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.lineage-libperfmgr
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
