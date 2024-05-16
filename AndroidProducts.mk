@@ -8,6 +8,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lmodroid_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
-    lmodroid_oxygen-user \
-    lmodroid_oxygen-userdebug \
-    lmodroid_oxygen-eng
+    lmodroid_oxygen-ap1a-user \
+    lmodroid_oxygen-ap1a-userdebug \
+    lmodroid_oxygen-ap1a-eng
