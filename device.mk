@@ -10,7 +10,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-$(call inherit-product, vendor/xiaomi/oxygen/oxygen-vendor.mk)
+#$(call inherit-product, vendor/xiaomi/oxygen/oxygen-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
 TARGET_BOARD_PLATFORM := msm8953
@@ -359,8 +359,8 @@ PRODUCT_PACKAGES += \
     qti-telephony-utils \
     qti_telephony_utils.xml
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+# PRODUCT_BOOT_JARS += \
+#     telephony-ext
 
 # Sensors
 PRODUCT_PACKAGES += \
