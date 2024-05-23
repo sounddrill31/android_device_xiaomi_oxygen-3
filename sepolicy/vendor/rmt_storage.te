@@ -1,1 +1,0 @@
-allow rmt_storage sysfs_subsys:file { read open };
