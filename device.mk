@@ -240,6 +240,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl
 
+PRODUCT_PACKAGES += \
+    liblzma.vendor:64
+
 # IPA Manager
 PRODUCT_PACKAGES += \
     ipacm \
@@ -324,6 +327,8 @@ PRODUCT_PACKAGES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson \
+    libnetutils.vendor:64 \
+    libsqlite.vendor:64 \
     libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti \
@@ -367,6 +372,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl:64 \
     android.hardware.sensors@1.0-service \
+    libpower.vendor:64 \
     libsensorndkbridge
 
 PRODUCT_COPY_FILES += \
