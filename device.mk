@@ -86,6 +86,7 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
+    libaudioroute.vendor \
     libaudio-resampler \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -121,6 +122,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.6 \
+    libpng.vendor \
+    libpiex.vendor \
     vendor.qti.hardware.camera.device@1.0 \
     camera.msm8953 \
     libshims_android \
@@ -174,6 +177,9 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen \
     libshims_binder
 
+PRODUCT_PACKAGES += \
+    liblzma.vendor
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -186,7 +192,8 @@ PRODUCT_PACKAGES += \
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \
-    android.hardware.gatekeeper@1.0-service
+    android.hardware.gatekeeper@1.0-service \
+    libion.vendor
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -211,6 +218,7 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
+    libhidlmemory.vendor \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
@@ -356,7 +364,8 @@ PRODUCT_PACKAGES += \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
-    qti_telephony_utils.xml
+    qti_telephony_utils.xml \
+    libsqlite.vendor:64
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
